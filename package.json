@@ -1,0 +1,16 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "npm run bootstrap",
+    "build": "npm run build.core",
+    "build.core": "lerna run --scope sloth-components build",
+    "build.frameworks": "lerna run --scope={sloth-react,sloth-angular} build",
+    "build.react": "lerna run --scope sloth-react build",
+    "build.angular": "lerna run --scope sloth-angular build",
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
