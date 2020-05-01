@@ -6,8 +6,8 @@ import  {
 } from '../../types/sloth-button';
 
 @Component({
-  tag: 'button-component',
-  styleUrl: 'button-component.scss',
+  tag: 'sloth-button',
+  styleUrl: 'sloth-button.scss',
   shadow: true,
 })
 // TODO: #2 add unit test
