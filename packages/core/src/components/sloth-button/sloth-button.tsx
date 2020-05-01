@@ -13,7 +13,10 @@ import  {
 // TODO: #2 add unit test
 
 export class Slide {
-  //FIXME: #2 @arturobabaro add id prop
+  /**
+   * Id assigned to input element
+   */
+  @Prop() sid!: string;
 
   /**
    * Specifies that a button should
@@ -98,10 +101,46 @@ export class Slide {
    */
   @Prop() label: string;
 
- // TODO: add properties to template
   render() {
-    return (
-        <button>{this.label}</button>
-    );
+      switch (this.type) {
+          case 'submit':
+              this.renderSubmit();
+              break;
+          default:
+              this.renderButton();
+              break;
+      }
+  }
+
+  renderSubmit() {
+      return (
+          <button
+          id={this.sid}
+          autofocus={this.autofocus}
+          disabled={this.disabled}
+          form={this.form}
+          formaction={this.formaction}
+          formenctype={this.formenctype}
+          formmethod={this.formmethod}
+          formnovalidate={this.formnovalidate}
+          name={this.name}
+          type={this.type}
+          value={this.value}
+          ></button>
+      );
+  }
+
+  renderButton() {
+      return (
+          <button
+          id={this.sid}
+          autofocus={this.autofocus}
+          disabled={this.disabled}
+          form={this.form}
+          name={this.name}
+          type={this.type}
+          value={this.value}
+          ></button>
+      );
   }
 }
